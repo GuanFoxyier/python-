@@ -4,7 +4,8 @@ import re
 
 author = "Guanjinglin"
 email = "1372851437@qq.com"
-
+# Created on 2018-09-12
+# 本代码基于python3.6.1测试通过
 
 conn = pymongo.MongoClient(host='127.0.0.1', port=27017)
 citytest2 = conn.spider_wx.cityarea2_fang   # 连接表

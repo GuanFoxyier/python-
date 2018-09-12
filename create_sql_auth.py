@@ -13,10 +13,11 @@ class Create_mysql_for_redis:
         self.conn = pymysql.connect(host="localhost", port=3306, user="root", passwd="password", charset="utf8", db="test")
         self.cursor = self.conn.cursor()
         self.redis_conn = StrictRedis(host="localhost", port=6379, db=0, password="password")
+        self.redis_title = "title"  # 要取出的redis数据
     def run(self):
 
-        redis_title = "data"  # 要取出的redis数据
-        data = self.redis_conn.lpop(redis_title).decode("utf-8")
+
+        data = self.redis_conn.lpop(self.redis_title).decode("utf-8")
 
         print(data)
         title = "title"  # 要创建的表名
@@ -40,3 +41,4 @@ class Create_mysql_for_redis:
         self.cursor.execute(sql)
         self.conn.commit()
         self.conn.close()
+        self.redis_conn.lpush(self.redis_title)  # 将该条redis数据回写进redis
