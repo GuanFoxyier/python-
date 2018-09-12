@@ -5,3 +5,5 @@
 1. decoordinates_mongo.py   解决mongo创建地图索引时坐标冲突或坐标重复问题
 
 2. send_mail.py   自动发送邮件, 可动态传入发件人,收件人, 授权码等
+
+3. AES_gzip_bas64.py   实现AES的ECB模式加密+gzip压缩+base64转码的加密解密过程
