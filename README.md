@@ -13,3 +13,5 @@
 5. redis_to_mysql.py  实现同步redis数据到mysql中(与上一个脚本共同食用效果更佳哦)
 
 6. merge_data.py  通过递归合并两条内部多种数据结构的字典
+
+7. bilibili_atob.py  b站的aid和bvid互相转换的算法
